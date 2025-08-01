@@ -20,22 +20,24 @@ public class holerite {
         String resposta = scanner.next();
 
         double adiantamento = 0.0;
-        if (resposta.equalsIgnoreCase("sim")) {adiantamento = salarioBruto * 0.4;
+        if (resposta.equalsIgnoreCase("sim")) {adiantamento = salarioBruto * 0.40;
             
-        }else resposta.equalsIgnoreCase("nao");{
-            adiantamento = 0.0;
-        }
-
+        } else if (resposta.equalsIgnoreCase("nao")) { adiantamento = 0.0;
+            
+        } 
+            
         System.out.println("Você adotou o  vale-transporte? (sim/nao)");
         resposta = scanner.next();
 
         double valeTransporte = 0.0;
-        if (resposta.equalsIgnoreCase(resposta)) {
+        if (resposta.equalsIgnoreCase("sim")) {
             valeTransporte = salarioBruto * 0.06;
             
-        }else resposta.equalsIgnoreCase("nao");{
+        } else if (resposta.equalsIgnoreCase("nao")) {
             valeTransporte = 0.0;
+            
         }
+        
 
         System.out.println("holerite");
         System.out.println("salario bruto:" + salarioBruto);
@@ -43,15 +45,15 @@ public class holerite {
         System.out.println("adiantamento:" + adiantamento);
         System.out.println("vale transporte:" + valeTransporte);
         System.out.println("INSS:" + calcularINSS(salarioBruto));
-        System.out.println("salario liquido:" + calcularSalarioLquido(salarioBruto, bonus, adiantamento, valeTransporte));
+        System.out.println("salario liquido:" + calcularSalarioLquido(salarioBruto, bonus, adiantamento, valeTransporte, calcularINSS(salarioBruto)));}
 
 
         
-        }
+        
 
-        public static double calcularSalarioLquido(double salarioBruto, double bonus, double adiantamento, double valeTransporte) {
-            double inss = calcularINSS(salarioBruto);
-            return (salarioBruto + bonus - adiantamento - valeTransporte - inss);
+        public static double calcularSalarioLquido(double salarioBruto, double bonus, double adiantamento, double valeTransporte, double inss) {
+            
+            return (salarioBruto + bonus - adiantamento - valeTransporte - calcularINSS( salarioBruto));
         }
 
         
@@ -69,12 +71,15 @@ public class holerite {
                 
             }
             return 0.0; 
+            
                 
-            }
+    }
+}
                 
             
                 
-        }
+        
+// Fim do código holerite.java}
 
         
 
